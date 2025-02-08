@@ -11,14 +11,8 @@ in {
       (ps:
         with ps; [
           plover-dict-commands
+          plover-svg-layout-display
           plover-word-tray
-
-          (plover-svg-layout-display.overrideAttrs (old: {
-            propagatedBuildInputs = with pkgs.python311Packages; [
-              lxml
-            ];
-          }))
-
           (plover-uinput.overrideAttrs (old: {
             propagatedBuildInputs = [
               xkbcommon
