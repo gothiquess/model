@@ -827,11 +827,11 @@
         "rtf-tokenize": "rtf-tokenize"
       },
       "locked": {
-        "lastModified": 1738864065,
-        "narHash": "sha256-/VS1ORu1U0Je8a1UXVGjIZdOrRJGXdG0lBLFkbb74zM=",
+        "lastModified": 1739045307,
+        "narHash": "sha256-i+O+hWSN0x4+MGI2XgDqEGgx9kTRVAaWC9asF26U9pM=",
         "owner": "dnaq",
         "repo": "plover-flake",
-        "rev": "d785a28e7f8903526cb8c34528a2b766b8e7df6e",
+        "rev": "8dd62cbad654031e6791580d8971b87d543f0d80",
         "type": "github"
       },
       "original": {
