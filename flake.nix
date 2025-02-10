@@ -129,12 +129,6 @@
       repo = "nixos-hardware";
     };
 
-    nix-rice = {
-      type = "github";
-      owner = "bertof";
-      repo = "nix-rice";
-    };
-
     nix-topology = {
       type = "github";
       owner = "oddlama";

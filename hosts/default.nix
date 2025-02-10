@@ -1,6 +1,7 @@
 {
-  self,
   inputs,
+  lib,
+  self,
   ...
 }: {
   flake.nixosConfigurations = let
@@ -9,7 +10,8 @@
     circuitry = ./circuitry;
     homeManager = "${self}/home";
     userHome = "${self}/home/users/ess";
-    theme = "${self}/theme/harmony.nix";
+    palette = import "${self}/theme/palette.nix";
+    theme = import "${self}/theme/harmony.nix" {inherit lib palette;};
   in {
     circuitry = nixosSystem {
       inherit specialArgs;

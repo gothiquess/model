@@ -1,7 +1,7 @@
 {
+  inputs,
   lib,
   pkgs,
-  inputs,
   ...
 }: let
   inherit (lib) mkBefore mkDefault;
@@ -129,7 +129,6 @@ in {
       allowUnfree = true;
     };
     overlays = [
-      inputs.nix-rice.overlays.default
       inputs.niri.overlays.niri
     ];
   };

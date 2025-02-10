@@ -1,6 +1,6 @@
 {
-  lib,
   inputs,
+  lib,
   ...
 }: let
   inherit (lib) forEach;
