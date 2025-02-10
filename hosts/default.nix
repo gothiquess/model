@@ -5,11 +5,11 @@
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
-    specialArgs = {inherit inputs userTheme;};
+    specialArgs = {inherit inputs theme;};
     circuitry = ./circuitry;
     homeManager = "${self}/home";
     userHome = "${self}/home/users/ess";
-    userTheme = "${self}/theme";
+    theme = "${self}/theme/harmony.nix";
   in {
     circuitry = nixosSystem {
       inherit specialArgs;

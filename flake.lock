@@ -391,18 +391,18 @@
         "type": "github"
       }
     },
-    "miscelanea": {
+    "misc": {
       "locked": {
-        "lastModified": 1738518439,
-        "narHash": "sha256-m2SpjkSTJSKSK9ZwJwTOMTP3zKodC3Iu8IweS5yfaQk=",
+        "lastModified": 1739149413,
+        "narHash": "sha256-e9FzeIU/nW5Te9yX9ZyVbZDF381Ai7KuNOm3md+CzZ0=",
         "owner": "gothiquess",
-        "repo": "miscelanea",
-        "rev": "dc00ea1a6e62f2ca730046573d29fe1d46290b9a",
+        "repo": "misc",
+        "rev": "43264b584ad66ff2c238136293c7342d0a2eb0be",
         "type": "github"
       },
       "original": {
         "owner": "gothiquess",
-        "repo": "miscelanea",
+        "repo": "misc",
         "type": "github"
       }
     },
@@ -941,7 +941,7 @@
         "ghostty": "ghostty",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "miscelanea": "miscelanea",
+        "misc": "misc",
         "niri": "niri",
         "nix-direnv": "nix-direnv",
         "nix-index-database": "nix-index-database",

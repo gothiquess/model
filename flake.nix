@@ -93,10 +93,10 @@
       repo = "impermanence";
     };
 
-    miscelanea = {
+    misc = {
       type = "github";
       owner = "gothiquess";
-      repo = "miscelanea";
+      repo = "misc";
     };
 
     niri = {
