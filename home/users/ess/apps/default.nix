@@ -1,10 +1,9 @@
 {
   imports = [
     ./ags
-    ./ghostty
+    ./emacs
     ./gtk
     ./niri
     ./plover
-    ./zed
   ];
 }

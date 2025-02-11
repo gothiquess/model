@@ -21,12 +21,12 @@ in {
           ".ssh/" # keys
           ".zen/" # browser
         ]
-        ++ forEach ["plover" "zed"] (
+        ++ forEach ["emacs" "plover"] (
           dir: ".config/${dir}"
-        )
-        ++ forEach ["share/zed"] (
-          dir: ".local/${dir}"
         );
+      # ++ forEach [""] (
+      #  dir: ".local/${dir}"
+      # );
       # ++ forEach [""] (
       #   dir: ".local/state/${dir}"
       # )

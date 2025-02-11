@@ -58,7 +58,7 @@ in
 
       (plain "layout" [
         (plain "focus-ring" [
-          (leaf "width" 4)
+          (leaf "width" 2)
           (leaf "active-color" "${primary.focused}")
           (leaf "inactive-color" "${primary.inactive}")
         ])
@@ -66,7 +66,7 @@ in
         # You can also add a border. It's similar to the focus ring, but always visible.
         (plain "border" [
           # (flag "off")
-          (leaf "width" 4)
+          (leaf "width" 2)
           (leaf "active-color" "${primary.focused}")
           (leaf "inactive-color" "${primary.focused}")
         ])
@@ -82,7 +82,7 @@ in
         (plain "default-column-width" [
           (leaf "proportion" 0.5)
         ])
-        (leaf "gaps" 2)
+        (leaf "gaps" 4)
 
         # Struts shrink the area occupied by windows, similarly to layer-shell panels.
         # You can think of them as a kind of outer gaps. They are set in logical pixels.
@@ -113,7 +113,7 @@ in
       # You can override environment variables for processes spawned by niri.
       (plain "environment" [
         (leaf "BROWSER" "zen-beta")
-        (leaf "EDITOR" "zeditor")
+        (leaf "EDITOR" "emacs")
         (leaf "DISPLAY" ":0")
         # Remove a variable by using null as the value:
         # (leaf "VAR" null)
@@ -286,7 +286,7 @@ in
         (plain "Mod+Shift+Slash" [(flag "show-hotkey-overlay")])
 
         # Suggested binds for running programs: terminal, app launcher, screen locker.
-        (plain "Mod+T" [(leaf "spawn" ["ghostty"])])
+        # (plain "Mod+T" [(leaf "spawn" [""])])
         (plain "Mod+D" [(leaf "spawn" ["fuzzel"])])
         # (plain "Super+Alt+L" [(leaf "spawn" ["swaylock"])])
 

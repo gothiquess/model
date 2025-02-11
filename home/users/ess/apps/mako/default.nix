@@ -1,11 +1,13 @@
-{...}: {
+{theme, ...}:
+with theme.colors;
+with theme.fonts; {
   services.mako = {
     enable = true;
     anchor = "top-center";
-    font = "Manrope Medium 10";
-    backgroundColor = "#FEFBF6";
-    textColor = "#161411";
-    borderRadius = 2;
+    font = "${serif} 10";
+    backgroundColor = "${primary.bg}";
+    textColor = "${primary.fg}";
+    borderRadius = 4;
     defaultTimeout = 5000;
   };
 }

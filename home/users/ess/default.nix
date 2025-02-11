@@ -9,12 +9,12 @@
     ./impermanence
     ./scripts
     # TODO: Setup secrets with sops + homeManager templates
+    # NOTE: DO I really need this?
     # ./secrets/sops
   ];
 
   home = {
     stateVersion = "24.11";
-
     packages = with pkgs; [
       curl
       wget
