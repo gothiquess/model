@@ -1,25 +1,23 @@
 {
   inputs,
-  lib,
   self,
   ...
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
     specialArgs = {inherit inputs theme;};
+    user = "ess";
     circuitry = ./circuitry;
-    homeManager = "${self}/home";
-    userHome = "${self}/home/users/ess";
+    home-manager = "${self}/home";
+    user-home = "${self}/home/users/${user}";
     palette = import "${self}/theme/palette.nix";
-    theme = import "${self}/theme/harmony.nix" {inherit lib palette;};
+    theme = import "${self}/theme/harmony.nix" {inherit palette;};
   in {
     circuitry = nixosSystem {
       inherit specialArgs;
       modules = [
         circuitry
-        homeManager
-        # TODO: Move to proper modules.
-        # inputs.easy-hosts.flakeModule
+        home-manager
         inputs.nixos-hardware.nixosModules.common-pc
         inputs.nixos-hardware.nixosModules.common-cpu-intel
         {
@@ -27,7 +25,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
-            users."ess" = import userHome;
+            users."${user}" = import user-home;
           };
         }
       ];

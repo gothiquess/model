@@ -8,6 +8,7 @@
 in {
   imports = [
     ./hardware-configuration.nix
+    ./power
   ];
 
   hardware = {
@@ -130,6 +131,7 @@ in {
     };
     overlays = [
       inputs.niri.overlays.niri
+      inputs.emacs-overlay.overlays.emacs
     ];
   };
 
@@ -143,8 +145,11 @@ in {
 
   services = {
     openssh.enable = true;
+
     dbus.packages = [pkgs.dconf];
+
     udisks2.enable = true;
+
     pipewire = {
       enable = true;
       socketActivation = false;
@@ -156,8 +161,23 @@ in {
       pulse.enable = true;
       wireplumber.enable = true;
     };
-    libinput.enable = true;
 
+    libinput = {
+      enable = true;
+      mouse = {
+        accelProfile = "flat";
+        accelSpeed = "0";
+        middleEmulation = false;
+      };
+
+      touchpad = {
+        naturalScrolling = true;
+        tapping = true;
+        clickMethod = "clickfinger";
+        horizontalScrolling = false;
+        disableWhileTyping = true;
+      };
+    };
     # Allow uinput as non-root user (in @input group)
     udev.extraRules = ''
       KERNEL=="ttyACM0", MODE="0666"
@@ -188,7 +208,6 @@ in {
 
   environment = {
     systemPackages = with pkgs; [
-      inputs.ghostty.packages.x86_64-linux.default
       file
       man-pages
       man-pages-posix
