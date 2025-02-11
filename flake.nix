@@ -60,22 +60,19 @@
       };
     };
 
-    easy-hosts = {
+    emacs-overlay = {
       type = "github";
-      owner = "tgirlcloud";
-      repo = "easy-hosts";
+      owner = "nix-community";
+      repo = "emacs-overlay";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
     flake-parts = {
       type = "github";
       owner = "hercules-ci";
       repo = "flake-parts";
-    };
-
-    ghostty = {
-      type = "github";
-      owner = "ghostty-org";
-      repo = "ghostty";
     };
 
     home-manager = {
@@ -127,16 +124,6 @@
       type = "github";
       owner = "NixOS";
       repo = "nixos-hardware";
-    };
-
-    nix-topology = {
-      type = "github";
-      owner = "oddlama";
-      repo = "nix-topology";
-      inputs = {
-        devshell.follows = "devshell";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     plover-flake = {
