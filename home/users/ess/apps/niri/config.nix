@@ -5,6 +5,7 @@
   ...
 }: let
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
+  wallpapers-path = ../../../../../theme/wallpaper.jpeg;
 in
   with theme.colors; {
     programs.niri.enable = true;
@@ -108,7 +109,7 @@ in
       # Add lines like this to spawn processes at startup.
       # Note that running niri as a session supports xdg-desktop-autostart,
       # which may be more convenient to use.
-      (leaf "spawn-at-startup" ["swaybg" "-m" "fill" "-i" "${inputs.misc}/assets/wallpapers/philip-oroni-wf3V3mm6cZQ-unsplash.jpg"])
+      (leaf "spawn-at-startup" ["swaybg" "-m" "fill" "-i" "${wallpapers-path}"])
 
       # You can override environment variables for processes spawned by niri.
       (plain "environment" [

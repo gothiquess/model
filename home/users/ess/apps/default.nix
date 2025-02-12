@@ -5,5 +5,6 @@
     ./gtk
     ./niri
     ./plover
+    ./ride
   ];
 }

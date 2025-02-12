@@ -40,26 +40,6 @@
         "type": "github"
       }
     },
-    "devshell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1735644329,
-        "narHash": "sha256-tO3HrHriyLvipc4xr+Ewtdlo7wM1OjXNjlWRgmM7peY=",
-        "owner": "numtide",
-        "repo": "devshell",
-        "rev": "f7795ede5b02664b57035b3b757876703e2c3eac",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "devshell",
-        "type": "github"
-      }
-    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -190,21 +170,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "impermanence",
-        "type": "github"
-      }
-    },
-    "misc": {
-      "locked": {
-        "lastModified": 1739149413,
-        "narHash": "sha256-e9FzeIU/nW5Te9yX9ZyVbZDF381Ai7KuNOm3md+CzZ0=",
-        "owner": "gothiquess",
-        "repo": "misc",
-        "rev": "43264b584ad66ff2c238136293c7342d0a2eb0be",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gothiquess",
-        "repo": "misc",
         "type": "github"
       }
     },
@@ -571,13 +536,11 @@
     "root": {
       "inputs": {
         "ags": "ags",
-        "devshell": "devshell",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "misc": "misc",
         "niri": "niri",
         "nix-direnv": "nix-direnv",
         "nix-index-database": "nix-index-database",

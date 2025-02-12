@@ -1,5 +1,5 @@
 {
-  description = "model systems.";
+  description = "ess' model system.";
 
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
@@ -51,15 +51,6 @@
       };
     };
 
-    devshell = {
-      type = "github";
-      owner = "numtide";
-      repo = "devshell";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     emacs-overlay = {
       type = "github";
       owner = "nix-community";
@@ -88,12 +79,6 @@
       type = "github";
       owner = "nix-community";
       repo = "impermanence";
-    };
-
-    misc = {
-      type = "github";
-      owner = "gothiquess";
-      repo = "misc";
     };
 
     niri = {
