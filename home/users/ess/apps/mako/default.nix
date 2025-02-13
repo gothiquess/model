@@ -4,7 +4,7 @@ with theme.fonts; {
   services.mako = {
     enable = true;
     anchor = "top-center";
-    font = "${serif} 10";
+    font = "${sans} 10";
     backgroundColor = "${primary.bg}";
     textColor = "${primary.fg}";
     borderRadius = 4;

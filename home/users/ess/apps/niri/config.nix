@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
-  wallpapers-path = ../../../../../theme/wallpaper.jpeg;
+  wallpapers-path = ../../../../../theme/wallpaper.png;
 in
   with theme.colors; {
     programs.niri.enable = true;

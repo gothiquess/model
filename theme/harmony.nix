@@ -1,19 +1,18 @@
 {palette}: let
   pick-color = colorlist: builtins.elemAt colorlist;
-  emerald = position: pick-color (palette.emerald) position;
+  zinc = position: pick-color (palette.zinc) position;
 in {
   colors = {
     primary = rec {
-      bg = emerald 0;
-      fg = emerald 10;
-      focused = emerald 5;
+      bg = zinc 1;
+      fg = zinc 8;
+      focused = zinc 9;
       inactive = bg;
-      highlight = emerald 1;
-      match = emerald 2;
+      highlight = zinc 1;
+      match = zinc 2;
     };
   };
   fonts = {
     sans = "Manrope Medium";
-    serif = "";
   };
 }

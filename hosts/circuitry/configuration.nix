@@ -283,7 +283,7 @@ in {
 
   xdg.portal = with pkgs; {
     enable = true;
-    extraPortals = [xdg-desktop-portal-wlr];
+    extraPortals = [xdg-desktop-portal-wlr xdg-desktop-portal-gtk];
     configPackages = [xdg-desktop-portal-wlr];
     config.common.default = [xdg-desktop-portal-wlr];
   };

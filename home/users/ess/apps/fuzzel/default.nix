@@ -12,7 +12,7 @@ in
       settings = {
         main = {
           anchor = "bottom";
-          font = "${serif}:size=10";
+          font = "${sans}:size=10";
           width = 16;
           lines = 4;
         };

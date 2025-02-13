@@ -10,17 +10,17 @@
     #   package = pkgs.whitesur-icon-theme;
     # };
     theme = {
-      name = "WhiteSur-Dark";
+      name = "WhiteSur-Light";
       package = pkgs.whitesur-gtk-theme;
     };
     gtk3.extraConfig = {
       settings = ''
-        gtk-application-prefer-dark-theme=1
+        gtk-application-prefer-dark-theme=0
       '';
     };
     gtk4.extraConfig = {
       settings = ''
-        gtk-application-prefer-dark-theme=1
+        gtk-application-prefer-dark-theme=0
       '';
     };
   };
