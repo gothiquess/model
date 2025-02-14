@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [./modules];
-  home.packages = with pkgs; [
-    dtach
+  home.packages = [
+    pkgs.dtach
   ];
   services.emacs = {
     enable = true;

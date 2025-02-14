@@ -14,10 +14,10 @@ in {
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [
-        vaapiIntel
-        intel-media-driver
-        vpl-gpu-rt
+      extraPackages = [
+        pkgs.vaapiIntel
+        pkgs.intel-media-driver
+        pkgs.vpl-gpu-rt
       ];
     };
     keyboard.qmk.enable = true;
@@ -207,10 +207,10 @@ in {
   fileSystems."/persist".neededForBoot = true;
 
   environment = {
-    systemPackages = with pkgs; [
-      file
-      man-pages
-      man-pages-posix
+    systemPackages = [
+      pkgs.file
+      pkgs.man-pages
+      pkgs.man-pages-posix
     ];
     persistence."/persist/system" = {
       hideMounts = true;
@@ -245,18 +245,18 @@ in {
   };
 
   fonts = {
-    packages = with pkgs; [
-      manrope
-      jetbrains-mono
-      julia-mono
-      unifont
-      unifont_upper
-      noto-fonts
-      noto-fonts-emoji
-      noto-fonts-monochrome-emoji
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      d2coding
+    packages = [
+      pkgs.manrope
+      pkgs.jetbrains-mono
+      pkgs.julia-mono
+      pkgs.unifont
+      pkgs.unifont_upper
+      pkgs.noto-fonts
+      pkgs.noto-fonts-emoji
+      pkgs.noto-fonts-monochrome-emoji
+      pkgs.noto-fonts-cjk-sans
+      pkgs.noto-fonts-cjk-serif
+      pkgs.d2coding
     ];
     fontconfig = {
       enable = mkDefault true;
@@ -281,11 +281,11 @@ in {
     };
   };
 
-  xdg.portal = with pkgs; {
+  xdg.portal = {
     enable = true;
-    extraPortals = [xdg-desktop-portal-wlr xdg-desktop-portal-gtk];
-    configPackages = [xdg-desktop-portal-wlr];
-    config.common.default = [xdg-desktop-portal-wlr];
+    extraPortals = [pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk];
+    configPackages = [pkgs.xdg-desktop-portal-wlr];
+    config.common.default = [pkgs.xdg-desktop-portal-wlr];
   };
 
   i18n = {

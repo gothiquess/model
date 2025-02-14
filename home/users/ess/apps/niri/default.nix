@@ -10,23 +10,23 @@
     ../mako
   ];
 
-  home.packages = with pkgs; [
-    wl-clipboard
-    wl-screenrec
-    wlsunset
-    wf-recorder
-    xwayland-satellite
-    swaybg
-    slurp
-    grim
-    gobject-introspection
-    mako
+  home.packages = [
+    pkgs.wl-clipboard
+    pkgs.wl-screenrec
+    pkgs.wlsunset
+    pkgs.wf-recorder
+    pkgs.xwayland-satellite
+    pkgs.swaybg
+    pkgs.slurp
+    pkgs.grim
+    pkgs.gobject-introspection
+    pkgs.mako
 
-    (writeShellApplication {
+    (pkgs.writeShellApplication {
       name = "wr";
-      runtimeInputs = with pkgs; [
-        wf-recorder
-        slurp
+      runtimeInputs = [
+        pkgs.wf-recorder
+        pkgs.slurp
       ];
 
       text = ''

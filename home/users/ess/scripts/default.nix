@@ -1,8 +1,28 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    (writeShellApplication {
+  home.packages = [
+    # Git
+    (pkgs.writeShellApplication {
+      name = "rgit";
+      runtimeInputs = [
+        pkgs.git
+      ];
+
+      text = ''
+        # Make the current commit the only (initial) commit.
+        # $1 String : commit-message.
+        # $2 Link : github-uri.
+
+        rm -rf .git
+        git init
+        git add .
+        git commit -m "$1"
+        git remote add origin "$2"
+        git push -u --force origin main '';
+    })
+
+    # Nix
+    (pkgs.writeShellApplication {
       name = "flaketest";
-      runtimeInputs = [];
 
       text = ''
         # Record a portion of the screen.
@@ -14,12 +34,50 @@
       '';
     })
 
-    # haskell-projects
-    (writeShellApplication {
+    # Lean
+    (pkgs.writeShellApplication {
+      name = "lean-min";
+
+      text = ''
+        # Create a lean project.
+        # $1 String : project-name.
+
+        LEAN_PROJECTS_DIR="$HOME/codata/dev/lean/"
+        PROJECT_NAME="$1"
+
+        mkdir -p "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"
+        cd "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"
+
+        git init .
+        nix flake new --template github:lenianiva/lean4-nix ./minimal
+        $EDITOR flake.nix
+        echo "use flake ." > .envrc
+        direnv '';
+    })
+
+    (pkgs.writeShellApplication {
+      name = "lean-dep";
+
+      text = ''
+        # Create a lean project.
+        # $1 String : project-name.
+
+        LEAN_PROJECTS_DIR="$HOME/codata/dev/lean/"
+        PROJECT_NAME="$1"
+
+        mkdir -p "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"
+        cd "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"
+
+        git init .
+        nix flake new --template github:lenianiva/lean4-nix#dependency ./dependency
+        $EDITOR flake.nix
+        echo "use flake ." > .envrc
+        direnv '';
+    })
+
+    # Haskell
+    (pkgs.writeShellApplication {
       name = "hask";
-      runtimeInputs = with pkgs; [
-        nix
-      ];
 
       text = ''
         # Create a haskell project.
@@ -38,11 +96,8 @@
         direnv '';
     })
 
-    (writeShellApplication {
+    (pkgs.writeShellApplication {
       name = "hask-deps";
-      runtimeInputs = with pkgs; [
-        nix
-      ];
 
       text = ''
         # Tweak hackage deps editing hlib.packageSourceOverrides.
@@ -60,7 +115,7 @@
         nix flake lock --update-input all-cabal-hashes '';
     })
 
-    (writeShellApplication {
+    (pkgs.writeShellApplication {
       name = "hask-localdeps";
 
       text = ''
@@ -78,7 +133,7 @@
         $EDITOR .envrc '';
     })
 
-    (writeShellApplication {
+    (pkgs.writeShellApplication {
       name = "hask-gitdeps";
 
       text = ''

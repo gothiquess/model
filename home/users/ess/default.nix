@@ -33,43 +33,6 @@
       inputs.zen.packages.${system}.default
       inputs.ags.packages.${system}.io
       inputs.ags.packages.${system}.notifd
-
-      # git-related
-      (writeShellApplication {
-        name = "rgit";
-        runtimeInputs = with pkgs; [
-          git
-        ];
-
-        text = ''
-          # Make the current commit the only (initial) commit.
-          # $1 String : commit-message.
-          # $2 Link : github-uri.
-
-          rm -rf .git
-          git init
-          git add .
-          git commit -m "$1"
-          git remote add origin "$2"
-          git push -u --force origin main '';
-      })
-
-      (writeShellApplication {
-        name = "gitc";
-        runtimeInputs = with pkgs; [
-          git
-        ];
-
-        text = ''
-          # Clone via ssh
-          # $1 String : github username.
-          # $2 String : github name repo.
-
-          GITUSER="$1"
-          GITREPO="$2"
-
-          git clone git@github.com:"$GITUSER"/"$GITREPO".git '';
-      })
     ];
 
     sessionPath = [];

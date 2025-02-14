@@ -1,11 +1,9 @@
 {
   inputs,
-  pkgs,
   self,
   ...
 }: {
   flake = {
-    formatter = pkgs.alejandra;
     nixosConfigurations = let
       inherit (inputs.nixpkgs.lib) nixosSystem;
       specialArgs = {inherit inputs theme;};

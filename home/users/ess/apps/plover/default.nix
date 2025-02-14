@@ -6,9 +6,7 @@
   xkbcommon = inputs.nixpkgs-xkbcommon.legacyPackages.${pkgs.system}.python311Packages.xkbcommon;
   plover-app = inputs.plover-flake.packages.${pkgs.system}.plover.with-plugins;
 in {
-  home.packages = with pkgs;
-  with libsForQt5;
-  with qt5; [
+  home.packages = [
     (plover-app
       (ps:
         with ps; [
@@ -24,6 +22,6 @@ in {
             ];
           }))
         ]))
-    qtwayland
+    pkgs.libsForQt5.qt5.qtwayland
   ];
 }

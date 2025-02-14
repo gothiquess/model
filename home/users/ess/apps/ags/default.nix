@@ -12,9 +12,9 @@
     configDir = ../ags;
 
     # additional packages to add to gjs's runtime
-    extraPackages = with pkgs; [
+    extraPackages = [
       inputs.ags.packages.${pkgs.system}.battery
-      fzf
+      pkgs.fzf
     ];
   };
 }
