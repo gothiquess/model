@@ -50,7 +50,9 @@
 
         git init .
         nix flake new --template github:lenianiva/lean4-nix ./minimal
-        $EDITOR flake.nix
+        cd "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"/minimal
+        direnv allow
+        $EDITOR "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"/minimal/flake.nix
         echo "use flake ." > .envrc
         direnv '';
     })
@@ -70,7 +72,9 @@
 
         git init .
         nix flake new --template github:lenianiva/lean4-nix#dependency ./dependency
-        $EDITOR flake.nix
+        cd "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"/dependency
+        direnv allow
+        $EDITOR "$LEAN_PROJECTS_DIR"/"$PROJECT_NAME"/dependency/flake.nix
         echo "use flake ." > .envrc
         direnv '';
     })
@@ -91,6 +95,7 @@
 
         git init .
         nix flake init --template github:Gabriella439/haskell-flake
+        direnv allow
         $EDITOR flake.nix
         echo "use flake ." > .envrc
         direnv '';

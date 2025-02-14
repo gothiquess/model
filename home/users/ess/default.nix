@@ -27,6 +27,7 @@
       ripgrep
       ripgrep-all
       speechd
+      android-tools
       qpwgraph
       alejandra
       cachix
