@@ -109,7 +109,6 @@ in
       # Add lines like this to spawn processes at startup.
       # Note that running niri as a session supports xdg-desktop-autostart,
       # which may be more convenient to use.
-      (leaf "spawn-at-startup" ["xwayland-satellite" "|" "plover"])
       (leaf "spawn-at-startup" ["swaybg" "-m" "fill" "-i" "${wallpapers-path}"])
 
       # You can override environment variables for processes spawned by niri.

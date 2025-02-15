@@ -79,6 +79,27 @@
         direnv '';
     })
 
+    # Typst
+    (pkgs.writeShellApplication {
+      name = "ty";
+
+      text = ''
+         # Create a typst project.
+         # $1 String : project-name.
+
+        TYPST_PROJECTS_DIR="$HOME/codata/dev/typst/"
+        PROJECT_NAME="$1"
+        mkdir -p "$TYPST_PROJECTS_DIR"/"$PROJECT_NAME"
+        cd "$TYPST_PROJECTS_DIR"/"$PROJECT_NAME"
+
+        git init .
+        direnv allow
+        nix flake init -t github:loqusion/typix
+        $EDITOR "$TYPST_PROJECTS_DIR"/"$PROJECT_NAME"/flake.nix
+        echo "use flake ." > .envrc
+        direnv '';
+    })
+
     # Haskell
     (pkgs.writeShellApplication {
       name = "hask";
