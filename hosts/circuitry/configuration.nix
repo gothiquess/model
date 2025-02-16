@@ -146,7 +146,10 @@ in {
   services = {
     openssh.enable = true;
 
-    dbus.packages = [pkgs.dconf];
+    dbus = {
+      enable = true;
+      packages = [pkgs.dconf];
+    };
 
     udisks2.enable = true;
 
@@ -240,7 +243,7 @@ in {
 
   programs = {
     command-not-found.enable = mkDefault false;
-    dconf.enable = mkDefault true;
+    # dconf.enable = mkDefault true;
     fuse.userAllowOther = mkDefault true;
   };
 
