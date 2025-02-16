@@ -14,14 +14,13 @@ in {
           plover-stitching
           plover-svg-layout-display
           plover-word-tray
-          plover-uinput
           # NOTE: For some reason plover doesn't work without this overlay.
           # Even if in the flake the dependency is included.
-          # (plover-uinput.overrideAttrs (old: {
-          #   propagatedBuildInputs = [
-          #     xkbcommon
-          #   ];
-          # }))
+          (plover-uinput.overrideAttrs (old: {
+            propagatedBuildInputs = [
+              xkbcommon
+            ];
+          }))
         ]))
     libsForQt5.qt5.qtwayland
   ];
