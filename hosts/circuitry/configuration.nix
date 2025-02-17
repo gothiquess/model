@@ -14,10 +14,10 @@ in {
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = [
-        pkgs.vaapiIntel
-        pkgs.intel-media-driver
-        pkgs.vpl-gpu-rt
+      extraPackages = with pkgs; [
+        vaapiIntel
+        intel-media-driver
+        vpl-gpu-rt
       ];
     };
     keyboard.qmk.enable = true;
@@ -248,18 +248,19 @@ in {
   };
 
   fonts = {
-    packages = [
-      pkgs.manrope
-      pkgs.jetbrains-mono
-      pkgs.julia-mono
-      pkgs.unifont
-      pkgs.unifont_upper
-      pkgs.noto-fonts
-      pkgs.noto-fonts-emoji
-      pkgs.noto-fonts-monochrome-emoji
-      pkgs.noto-fonts-cjk-sans
-      pkgs.noto-fonts-cjk-serif
-      pkgs.d2coding
+    packages = with pkgs; [
+      manrope
+      iosevka
+      jetbrains-mono
+      julia-mono
+      unifont
+      unifont_upper
+      noto-fonts
+      noto-fonts-emoji
+      noto-fonts-monochrome-emoji
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      d2coding
     ];
     fontconfig = {
       enable = mkDefault true;

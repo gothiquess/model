@@ -1,9 +1,9 @@
 {pkgs, ...}: {
-  gtk = {
+  gtk = with pkgs; {
     enable = true;
     cursorTheme = {
       name = "WhiteSur-cursors";
-      package = pkgs.whitesur-cursors;
+      package = whitesur-cursors;
     };
     # iconTheme = {
     #   name = "WhiteSur-light";
@@ -11,15 +11,15 @@
     # };
     theme = {
       name = "WhiteSur-Light";
-      package = pkgs.whitesur-gtk-theme;
+      package = whitesur-gtk-theme;
     };
     gtk3.extraConfig = {
-      settings = ''
+      Settings = ''
         gtk-application-prefer-dark-theme=0
       '';
     };
     gtk4.extraConfig = {
-      settings = ''
+      Settings = ''
         gtk-application-prefer-dark-theme=0
       '';
     };
