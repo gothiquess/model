@@ -14,6 +14,7 @@ in {
           plover-stitching
           plover-svg-layout-display
           plover-word-tray
+          plover-emoji
           # NOTE: For some reason plover doesn't work without this overlay.
           # Even if in the flake the dependency is included.
           (plover-uinput.overrideAttrs (old: {
