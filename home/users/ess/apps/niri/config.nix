@@ -66,11 +66,24 @@ in
 
         # You can also add a border. It's similar to the focus ring, but always visible.
         (plain "border" [
-          # (flag "off")
           (leaf "width" 2)
           (leaf "active-color" "${primary.focused}")
           (leaf "inactive-color" "${primary.focused}")
         ])
+
+        # TODO:
+        # (plain "tab-indicator" [
+        #   (leaf "hide-when-single-tab" true)
+        #   (leaf "place-within-column" true)
+        #   (leaf "gap" 5)
+        #   (leaf "width" 4)
+        #   (leaf "length" "total-proportion=1.0")
+        #   (leaf "position" "right")
+        #   (leaf "gaps-between-tabs" 2)
+        #   (leaf "corner-radius" 8)
+        #   (leaf "active-color" "${primary.focused}")
+        #   (leaf "inactive-color" "${primary.match}")
+        # ])
 
         # You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
         (plain "preset-column-widths" [
@@ -219,57 +232,13 @@ in
 
       # Window rules let you adjust behavior for individual windows.
       # They are processed in order of appearance in this file.
+
       (plain "window-rule" [
-        # Match directives control which windows this rule will apply to.
-        # You can match by app-id and by title.
-        # The window must match all properties of the match directive.
         (leaf "match" {
-          app-id = "org.myapp.MyApp";
-          title = "My Cool App";
+          app-id = "Plover: SVG Layout Display";
+          title = "org.openstenoproject.python3";
         })
-
-        # There can be multiple match directives. A window must match any one
-        # of the rule's match directives.
-        #
-        # If there are no match directives, any window will match the rule.
-        (leaf "match" {title = "Second App";})
-
-        # You can also add exclude directives which have the same properties.
-        # If a window matches any exclude directive, it won't match this rule.
-        #
-        # Both app-id and title are regular expressions.
-        # Literal nix strings can be helpful here.
-        (leaf "exclude" {app-id = ''\.unwanted\.'';})
-
-        # Here are the properties that you can set on a window rule.
-        # You can override the default column width.
-        (plain "default-column-width" [
-          (leaf "proportion" 0.75)
-        ])
-
-        # You can set the output that this window will initially open on.
-        # If such an output does not exist, it will open on the currently
-        # focused output as usual.
-        (leaf "open-on-output" "eDP-1")
-
-        # Make this window open as a maximized column.
-        (leaf "open-maximized" true)
-
-        # Make this window open fullscreen.
-        (leaf "open-fullscreen" true)
-        # You can also set this to false to prevent a window from opening fullscreen.
-        # (leaf "open-fullscreen" false)
-      ])
-
-      # Here's a useful example. Work around WezTerm's initial configure bug
-      # by setting an empty default-column-width.
-      (plain "window-rule" [
-        # This regular expression is intentionally made as specific as possible,
-        # since this is the default config, and we want no false positives.
-        # You can get away with just app-id="wezterm" if you want.
-        # The regular expression can match anywhere in the string.
-        (leaf "match" {app-id = ''^org\.wezfurlong\.wezterm$'';})
-        (plain "default-column-width" [])
+        (leaf "open-floating" true)
       ])
 
       (plain "binds" [
@@ -282,6 +251,9 @@ in
         #
         # Most actions that you can bind here can also be invoked programmatically with
         # `niri msg action do-something`.
+
+        # Use this bind to toggle a column between normal and tabbed display.
+        (plain "Mod+W" [(flag "toggle-column-tabbed-display")])
 
         # Mod-Shift-/, which is usually the same as Mod-?,
         # shows a list of important hotkeys.
