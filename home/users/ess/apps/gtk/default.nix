@@ -3,15 +3,15 @@
     enable = true;
     cursorTheme = {
       name = "WhiteSur-cursors";
-      package = whitesur-cursors;
+      package = pkgs.whitesur-cursors;
     };
-    # iconTheme = {
-    #   name = "WhiteSur-light";
-    #   package = pkgs.whitesur-icon-theme;
-    # };
+    iconTheme = {
+      name = "WhiteSur-light";
+      package = pkgs.whitesur-icon-theme;
+    };
     theme = {
       name = "WhiteSur-Light";
-      package = whitesur-gtk-theme;
+      package = pkgs.whitesur-gtk-theme;
     };
     gtk3.extraConfig = {
       Settings = ''
