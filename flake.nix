@@ -115,9 +115,6 @@
       type = "github";
       owner = "dnaq";
       repo = "plover-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     sops-nix = {
