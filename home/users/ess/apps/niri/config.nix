@@ -240,6 +240,25 @@ in
           title = "org.openstenoproject.python3";
         })
         (leaf "open-floating" true)
+        (plain "focus-ring" [
+          (leaf "width" 2)
+          (leaf "active-color" "${secondary.focused}")
+          (leaf "inactive-color" "${secondary.inactive}")
+        ])
+      ])
+
+      (plain "window-rule" [
+        (leaf "match" {
+          app-id = "zen";
+        })
+        (leaf "open-fullscreen" true)
+      ])
+
+      (plain "window-rule" [
+        (leaf "match" {
+          app-id = "emacs";
+        })
+        (leaf "open-fullscreen" true)
       ])
 
       (plain "binds" [
