@@ -18,6 +18,7 @@ in {
           "codata/world" # world's projects
           "data/dc" # documents
           "data/dw" # downloads
+          "data/logs" # personal logs
           ".ssh/" # keys
           ".zen/" # browser
           ".dyalog" # ride/dyalog's cache
