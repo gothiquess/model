@@ -20,20 +20,6 @@
         git push -u --force origin main '';
     })
 
-    # Nix
-    (pkgs.writeShellApplication {
-      name = "flaketest";
-
-      text = ''
-        # Record a portion of the screen.
-        # $1 Directory : path to flake.
-
-        FLAKE_PATH="$1"
-
-        cd "$FLAKE_PATH" && nix flake check .
-      '';
-    })
-
     # Lean
     (pkgs.writeShellApplication {
       name = "lean-min";

@@ -124,6 +124,7 @@ in
       # which may be more convenient to use.
       (leaf "spawn-at-startup" "xwayland-satellite")
       (leaf "spawn-at-startup" ["swaybg" "-m" "fill" "-i" "${wallpapers-path}"])
+      (leaf "spawn-at-startup" "plover")
 
       # You can override environment variables for processes spawned by niri.
       (plain "environment" [
