@@ -96,6 +96,12 @@
       repo = "nix-direnv";
     };
 
+    nixgl = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nixGL";
+    };
+
     nix-index-database = {
       type = "github";
       owner = "Mic92";

@@ -34,6 +34,7 @@
       inputs.zen.packages.${system}.default
       inputs.ags.packages.${system}.io
       inputs.ags.packages.${system}.notifd
+      inputs.nixgl.nixGLIntel
     ];
 
     sessionPath = [];

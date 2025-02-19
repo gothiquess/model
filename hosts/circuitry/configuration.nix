@@ -131,6 +131,7 @@ in {
     };
     overlays = [
       inputs.niri.overlays.niri
+      inputs.nixgl.overlay
       inputs.emacs-overlay.overlays.emacs
     ];
   };
