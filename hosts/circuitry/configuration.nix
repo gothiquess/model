@@ -250,7 +250,7 @@ in {
   fonts = {
     packages = with pkgs; [
       manrope
-      iosevka
+      aporetic
       jetbrains-mono
       julia-mono
       unifont
