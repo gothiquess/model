@@ -29,6 +29,7 @@
       speechd
       android-tools
       qpwgraph
+      nix-output-monitor
       alejandra
       cachix
       inputs.zen.packages.${system}.default
