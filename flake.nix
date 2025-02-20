@@ -90,6 +90,15 @@
       };
     };
 
+    nixago = {
+      type = "github";
+      owner = "jmgilman";
+      repo = "nixago";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     nix-direnv = {
       type = "github";
       owner = "nix-community";
