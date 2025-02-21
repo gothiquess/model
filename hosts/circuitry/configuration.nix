@@ -142,6 +142,10 @@ in {
       enable = true;
       wifi.powersave = true;
     };
+    stevenblack = {
+      enable = true;
+      block = ["fakenews" "gambling" "porn" "social"];
+    };
   };
 
   services = {
