@@ -16,6 +16,7 @@
   home = {
     stateVersion = "24.11";
     packages = with pkgs; [
+      # ops
       curl
       wget
       perl
@@ -29,13 +30,17 @@
       speechd
       android-tools
       qpwgraph
+      # nix
       nix-output-monitor
       alejandra
       cachix
+      # inputs
       inputs.zen.packages.${system}.default
       inputs.ags.packages.${system}.io
       inputs.ags.packages.${system}.notifd
       inputs.nixgl
+      # communication
+      (vesktop.override {electron = electron_33;})
     ];
 
     sessionPath = [];
@@ -95,7 +100,7 @@
         XDG_DATA_HOME="$HOME/.local/share";
 
         # Prompt
-        PS1="↑ " '';
+        PS1="$ " '';
 
       shellAliases = {
         l = "ls -AFhlv --group-directories-first";
