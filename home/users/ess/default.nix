@@ -39,8 +39,6 @@
       inputs.ags.packages.${system}.io
       inputs.ags.packages.${system}.notifd
       inputs.nixgl
-      # communication
-      (vesktop.override {electron = electron_33;})
     ];
 
     sessionPath = [];
