@@ -23,7 +23,7 @@ in {
           ".zen/" # browser
           ".dyalog" # ride/dyalog's cache
         ]
-        ++ forEach ["emacs" "plover"] (
+        ++ forEach ["emacs" "plover" "vesktop"] (
           dir: ".config/${dir}"
         );
       # ++ forEach [""] (
