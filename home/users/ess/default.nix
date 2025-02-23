@@ -39,6 +39,8 @@
       inputs.ags.packages.${system}.io
       inputs.ags.packages.${system}.notifd
       inputs.nixgl
+      # docs
+      foliate
     ];
 
     sessionPath = [];
