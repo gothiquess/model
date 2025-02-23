@@ -25,6 +25,12 @@ in {
         ]
         ++ forEach ["emacs" "plover"] (
           dir: ".config/${dir}"
+        )
+        ++ lib.forEach ["com.github.johnfactotum.Foliate"] (
+          dir: ".local/share/${dir}"
+        )
+        ++ lib.forEach ["com.github.johnfactotum.Foliate"] (
+          dir: ".cache/${dir}"
         );
       # ++ forEach [""] (
       #  dir: ".local/${dir}"
@@ -32,12 +38,6 @@ in {
       # ++ forEach [""] (
       #   dir: ".local/state/${dir}"
       # )
-      # ++ lib.forEach [""] (
-      #   dir: ".local/share/${dir}"
-      # )
-      # ++ lib.forEach [""] (
-      #   dir: ".cache/${dir}"
-      # );
 
       files = [
         ".bash_history"
