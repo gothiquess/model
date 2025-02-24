@@ -21,7 +21,8 @@ in {
           "data/logs" # personal logs
           ".ssh/" # keys
           ".zen/" # browser
-          ".dyalog" # ride/dyalog's cache
+          ".mozilla/" # firefox
+          ".dyalog/" # ride/dyalog's cache
         ]
         ++ forEach ["emacs" "plover"] (
           dir: ".config/${dir}"
