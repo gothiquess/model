@@ -16,17 +16,7 @@
   home = {
     stateVersion = "24.11";
     packages = with pkgs; [
-      # ops
-      curl
-      wget
-      perl
-      rlwrap
-      tree
-      gnutar
-      unzip
-      p7zip
-      ripgrep
-      ripgrep-all
+      # misc
       speechd
       android-tools
       qpwgraph

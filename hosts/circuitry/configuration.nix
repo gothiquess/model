@@ -219,6 +219,17 @@ in {
       pkgs.file
       pkgs.man-pages
       pkgs.man-pages-posix
+      pkgs.iodine
+      pkgs.curl
+      pkgs.wget
+      pkgs.perl
+      pkgs.rlwrap
+      pkgs.tree
+      pkgs.gnutar
+      pkgs.unzip
+      pkgs.p7zip
+      pkgs.ripgrep
+      pkgs.ripgrep-all
     ];
     persistence."/persist/system" = {
       hideMounts = true;
