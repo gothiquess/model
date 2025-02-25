@@ -20,6 +20,8 @@
       speechd
       android-tools
       qpwgraph
+      # vcs
+      hut
       # nix
       nix-output-monitor
       alejandra
