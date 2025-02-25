@@ -812,8 +812,7 @@
         "plover-flake": "plover-flake",
         "sops-nix": "sops-nix",
         "systems": "systems_2",
-        "tarnix": "tarnix",
-        "zen": "zen"
+        "tarnix": "tarnix"
       }
     },
     "rtf-tokenize": {
@@ -948,26 +947,6 @@
       "original": {
         "owner": "Supreeeme",
         "repo": "xwayland-satellite",
-        "type": "github"
-      }
-    },
-    "zen": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739667343,
-        "narHash": "sha256-fNEz+Yd0t9jXz27qKRMAEBradTwYBeBLOECx+ydG25s=",
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "rev": "8c7f6ca49f87b4e114f775a4dad956ceb6df4220",
-        "type": "github"
-      },
-      "original": {
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
