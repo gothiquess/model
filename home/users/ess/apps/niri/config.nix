@@ -128,7 +128,7 @@ in
 
       # You can override environment variables for processes spawned by niri.
       (plain "environment" [
-        (leaf "BROWSER" "zen-beta")
+        (leaf "BROWSER" "firefox")
         (leaf "EDITOR" "emacs")
         (leaf "DISPLAY" ":0")
         # Remove a variable by using null as the value:
@@ -249,16 +249,16 @@ in
 
       (plain "window-rule" [
         (leaf "match" {
-          app-id = "zen";
+          app-id = "firefox";
         })
-        (leaf "open-fullscreen" true)
+        (leaf "open-maximized" true)
       ])
 
       (plain "window-rule" [
         (leaf "match" {
           app-id = "emacs";
         })
-        (leaf "open-fullscreen" true)
+        (leaf "open-maximized" true)
       ])
 
       (plain "binds" [

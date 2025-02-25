@@ -20,8 +20,7 @@ in {
           "data/dw" # downloads
           "data/logs" # personal logs
           ".ssh/" # keys
-          ".zen/" # browser
-          ".mozilla/" # firefox
+          ".mozilla/" # browser
           ".dyalog/" # ride/dyalog's cache
         ]
         ++ forEach ["emacs" "plover"] (
